@@ -1,9 +1,22 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Button, Text, View} from 'react-native';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
     return (
-        <Text style={{fontSize: 30}}>Home Screen</Text>
+        <View style={
+            {
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center',
+            }
+        }>
+            <Button
+                title="Aller vers Contacts"
+                onPress={() => {
+                    navigation.navigate('Contact', {user: "Samuel Michaux"})
+                }}
+            />
+        </View>
     );
 };
 
